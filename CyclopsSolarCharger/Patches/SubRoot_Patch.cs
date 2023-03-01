@@ -37,7 +37,7 @@ namespace CyclopsSolarCharger.Patches
                         // calculate the amount of energy to charge between 2 numbers (max 0.037, min 0.007) depending on the depth
                         // so if depth = 0 (surface) max charge power
                         // I have obtained these values by trial and error, but i think they are balanced
-                        float energy = depth == 0 ? 0 : Mathf.Clamp(depth * 0.037f, 0.007f, 0.037f);
+                        float energy = depth == 0 ? 0 : Mathf.Clamp(depth * 0.05f, 0.007f, 0.05f);
                         // stack up to 3 upgrades
                         float toCharge = energy * Mathf.Clamp(numUpgrades, 0, Main.s_modConfig.MaxStacksOption);
                         __instance.powerRelay.AddEnergy(toCharge, out float _);
