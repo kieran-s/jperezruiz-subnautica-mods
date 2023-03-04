@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclopsSolarCharger", "CyclopsSolarCharger\CyclopsSolarCharger.csproj", "{0E8B8846-E4D0-425E-9E03-6E8ACD501737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScannerRoomBetterUpgrades", "ScannerRoomBetterUpgrades\ScannerRoomBetterUpgrades.csproj", "{7A7CC532-3144-4A59-A9CF-7837B058F6C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterScannerRoomUpgrades", "BetterScannerRoomUpgrades\BetterScannerRoomUpgrades.csproj", "{7A7CC532-3144-4A59-A9CF-7837B058F6C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
