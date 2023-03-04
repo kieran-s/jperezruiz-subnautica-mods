@@ -73,6 +73,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Configuration\SMLConfig.cs" />
+        <Compile Include="Modules\PowerEfficiencyModule.cs" />
         <Compile Include="MonoBehaviors\MapRoomFunctionalityConfigSyncComponent.cs" />
         <Compile Include="Patches\MapRoomFunctionality_Patch.cs" />
         <Compile Include="Main.cs" />
@@ -81,10 +82,8 @@
     <ItemGroup>
       <Content Include="README.md" />
       <Content Include="screenshots\config.png" />
+      <Content Include="screenshots\craft.png" />
       <Content Include="screenshots\scanner.png" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="screenshots" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

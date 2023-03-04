@@ -3,10 +3,13 @@
 Better upgrades for the Scanner Room:
 - More range, up to 1000m
 - Faster scans
+- Reduce power consumption
 - Configurable
 
 With the default configuration, with 2 range upgrades and 2 speed upgrades you will get the
 maximum range and speed for your Scanner Room.
+
+By default each power efficiency upgrade will reduce the power consumption by 20%.
 
 ## Acknowledgements
 
@@ -17,10 +20,22 @@ maximum range and speed for your Scanner Room.
 
 ## Features
 
-Increase the maximum scanning speed and the maximum range.
+Increase the maximum scanning speed, the maximum range and reduce the power consumption.
 
 ![Configuration options for Better Scanner Room Upgrades mod](./screenshots/config.png)
+![Craft Better Scanner Room Upgrades](./screenshots/craft.png)
 ![Scanner room](./screenshots/scanner.png)
+
+### Power efficiency
+
+A new upgrade can be crafted in the Scanner room fabricator, the Scanner room power efficiency upgrade.
+
+Each upgrade installed will reduce the power consumption by 20% (configurable).
+
+The maximum total power reduction is 90%.
+
+You can configure how much power consumption optimize per upgrade, so if for example you configure directly 90%,
+with only one upgrade you will get the max power efficiency.
 
 ### More range
 
