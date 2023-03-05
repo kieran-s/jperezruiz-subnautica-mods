@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclopsSolarCharger", "Cycl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterScannerRoomUpgrades", "BetterScannerRoomUpgrades\BetterScannerRoomUpgrades.csproj", "{7A7CC532-3144-4A59-A9CF-7837B058F6C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclopsSpeedUpgrades", "CyclopsSpeedUpgrades\CyclopsSpeedUpgrades.csproj", "{214B19EF-2D6E-42CE-AB09-8CF0BA966F2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{7A7CC532-3144-4A59-A9CF-7837B058F6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A7CC532-3144-4A59-A9CF-7837B058F6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A7CC532-3144-4A59-A9CF-7837B058F6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214B19EF-2D6E-42CE-AB09-8CF0BA966F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214B19EF-2D6E-42CE-AB09-8CF0BA966F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214B19EF-2D6E-42CE-AB09-8CF0BA966F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214B19EF-2D6E-42CE-AB09-8CF0BA966F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
