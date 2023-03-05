@@ -35,7 +35,6 @@ namespace BetterScannerRoomUpgrades.Patches
         [HarmonyPrefix]
         private static bool MapScale_Prefix(MapRoomFunctionality __instance, ref float __result)
         {
-            Main.Log.LogInfo("Getter");
             __result = __instance.hologramRadius / SMLConfig.MaxRange;
             return false;
         }
@@ -97,7 +96,6 @@ namespace BetterScannerRoomUpgrades.Patches
         {
             if (__instance.powered && (double)__instance.timeLastPowerDrain + 1.0 <= (double)Time.time)
             {
-                Main.Log.LogInfo("Power should be consumed");
                 __state = true;
                 __instance.timeLastPowerDrain = Time.time;
             }
@@ -115,7 +113,6 @@ namespace BetterScannerRoomUpgrades.Patches
         {
             if (__state)
             {
-                Main.Log.LogInfo("Consuming power");
                 var defaultPowerConsumption = __instance.scanActive ? 0.5f : 0.15f;
                 var numUpgrades =  __instance.storageContainer.container.GetCount
                     (Main.PowerEfficiencyModule.TechType);
