@@ -22,7 +22,7 @@ namespace CyclopsSolarCharger.Patches
                     // get the num of CyclopsSolarCharger installed
                     var numUpgrades = Mathf.Clamp(
                         __instance.upgradeConsole.modules.GetCount(Main.solarModule.TechType),
-                        SMLConfig.MaxStackMinValue,
+                        0,
                         SMLConfig.MaxStackMinValue
                     );
                     if (numUpgrades > 0)
