@@ -62,10 +62,8 @@ namespace CyclopsSpeedUpgrades.Modules
         {
             Sprite icon = null;
             var iconPath = Path.Combine(AssetsFolder, file);
-            Main.Log.LogInfo("Asset path "+iconPath);
             if (File.Exists(iconPath))
             {
-                Main.Log.LogInfo("Asset not found");
                 Texture2D texture = ImageUtils.LoadTextureFromFile(iconPath);
                 icon = ImageUtils.LoadSpriteFromTexture(texture);
             }
