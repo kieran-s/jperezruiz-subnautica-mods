@@ -75,9 +75,9 @@
         <Compile Include="Configuration\SMLConfig.cs" />
         <Compile Include="Modules\PowerEfficiencyModule.cs" />
         <Compile Include="MonoBehaviors\MapRoomFunctionalityConfigSyncComponent.cs" />
-        <Compile Include="Patches\MapRoomFunctionality_Patch.cs" />
+        <Compile Include="Patches\MapRoomFunctionalityPatcher.cs" />
         <Compile Include="Main.cs" />
-        <Compile Include="Patches\uGUI_ResourceTracker_Patch.cs" />
+        <Compile Include="Patches\uGUI_ResourceTrackerPatcher.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

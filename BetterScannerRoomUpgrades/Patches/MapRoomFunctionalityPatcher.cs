@@ -12,14 +12,14 @@ namespace BetterScannerRoomUpgrades.Patches
      * Patch the Scanner room component
      */
     [HarmonyPatch(typeof(MapRoomFunctionality))]
-    public class MapRoomFunctionality_Patch
+    public class MapRoomFunctionalityPatcher
     {
         private static readonly TechType[] AdditionalUpgrades = new [] {
             Main.PowerEfficiencyModule.TechType
         };
         [HarmonyPatch(nameof(MapRoomFunctionality.Start))]
         [HarmonyPostfix]
-        private static void Start(MapRoomFunctionality __instance)
+        private static void Start_Postfix(MapRoomFunctionality __instance)
         {
             // add the component to update the scanner room when the mod config changes
             __instance.gameObject.AddComponent<MapRoomFunctionalityConfigSyncComponent>();

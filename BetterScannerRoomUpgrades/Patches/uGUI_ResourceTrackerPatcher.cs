@@ -10,11 +10,11 @@ namespace BetterScannerRoomUpgrades.Patches
      * the scanned resources
      */
     [HarmonyPatch(typeof(uGUI_ResourceTracker))]
-    public class uGUI_ResourceTracker_Patch
+    public class uGUI_ResourceTrackerPatcher
     {
         [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherAll))]
         [HarmonyPrefix]
-        public static bool GatherAll(uGUI_ResourceTracker __instance)
+        public static bool GatherAll_Prefix(uGUI_ResourceTracker __instance)
         {
             var camera = MainCamera.camera;
             __instance.nodes.Clear();
@@ -31,7 +31,7 @@ namespace BetterScannerRoomUpgrades.Patches
 
         [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherScanned))]
         [HarmonyPrefix]
-        public static bool GatherScanned(uGUI_ResourceTracker __instance)
+        public static bool GatherScanned_Prefix(uGUI_ResourceTracker __instance)
         {
             Camera camera = MainCamera.camera;
             __instance.nodes.Clear();
