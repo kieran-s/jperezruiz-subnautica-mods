@@ -35,7 +35,7 @@ namespace BetterScannerRoomUpgrades.Patches
         [HarmonyPrefix]
         private static bool MapScale_Prefix(MapRoomFunctionality __instance, ref float __result)
         {
-            __result = __instance.hologramRadius / SMLConfig.MaxRange;
+            __result = __instance.hologramRadius / Main.s_modConfig.MaxRange;
             return false;
         }
         
@@ -62,7 +62,7 @@ namespace BetterScannerRoomUpgrades.Patches
             // is greather than the max range, use the max range
             float newRange = Mathf.Min
             (
-                SMLConfig.MaxRange,
+                Main.s_modConfig.MaxRange,
                 Main.s_modConfig.DefaultRange + (numRangeUpgrades * Main.s_modConfig.RangePerModule)
             );
             // get the new interval, the min scan interval is SMLConfig.MinScanInterval

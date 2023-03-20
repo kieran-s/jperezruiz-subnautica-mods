@@ -1,7 +1,7 @@
 ﻿# Subnautica Better Scanner Room Upgrades (BepInEx)
 
 Better upgrades for the Scanner Room:
-- More range, up to 1000m
+- More range, up to 4000m
 - Faster scans
 - Reduce power consumption
 - Configurable
@@ -46,12 +46,14 @@ Vanilla values:
 
 With Better Scanner Room Upgrades:
 - Initial range: 600m (configurable)
-- Maximum range: 1000m
+- Maximum range: 1000m (configurable up to 4000)
 - Maximum range achievable with only 2 range upgrades
 - Range increase per range upgrade: 200m (configurable)
 
-Please, take into account that, for performance reasons, the maximum scanning range is 1000m, but
-you can configure how to reach that 1000m.
+Max range can now be configured up to 4000m, by default is set to 1000m.
+
+NOTE: To avoid problems with the game, please increase the max range slowly, try that everything works fine and then increase
+a bit more. If the game crashes or has a strange behavior, reduce the max range,
 
 You can configure how much range to increase per upgrade and how much range the scanner have without upgrades.
 

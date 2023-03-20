@@ -9,22 +9,26 @@
     public class SMLConfig : ConfigFile
     {
         /**
-         * Max range for the scanner. More than 1000m could cause problems
-         */
-        public const float MaxRange = 1000;
-        /**
          * Min interval in seconds between scan blips. Less than 0.5f (half second) could cause problems.
          */
         public const float MinScanInterval = 1f;
-
         public const float MaxPowerEfficiency = 90f;
+        [Slider
+        (
+            label: "Max scanner range",
+            min: 300,
+            max: 4000,
+            Step = 100,
+            DefaultValue = 1000,
+            Tooltip = "The maximum range for the scanner with all the upgrades installed."
+        )]
+        public int MaxRange = 1000;
         [Slider(label: "Scan interval per upgrade", min: 2, max: 14, Step = 1, DefaultValue = 4, Tooltip = "Number of seconds to reduce the scanning interval for each upgrade installed.")]
         public float SpeedPerModule = 4;
-        [Slider(label: "Range increase per upgrade", min: 50, max: 1000, Step = 100, DefaultValue = 200, Tooltip = "The number of meters to increase the scan range for each upgrade installed.")]
+        [Slider(label: "Range increase per upgrade", min: 50, max: 4000, Step = 100, DefaultValue = 200, Tooltip = "The number of meters to increase the scan range for each upgrade installed.")]
         public int RangePerModule = 200;
-        [Slider(label: "Default range", min: 300, max: 1000, Step = 100, DefaultValue = 600, Tooltip = "The default scan range with no upgrades installed.")]
+        [Slider(label: "Default range", min: 300, max: 4000, Step = 100, DefaultValue = 600, Tooltip = "The default scan range with no upgrades installed.")]
         public int DefaultRange = 600;
-
         [Slider
         (
             label: "Default scan interval",
