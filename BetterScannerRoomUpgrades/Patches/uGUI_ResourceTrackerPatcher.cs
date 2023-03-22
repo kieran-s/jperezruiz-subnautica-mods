@@ -12,42 +12,41 @@ namespace BetterScannerRoomUpgrades.Patches
     [HarmonyPatch(typeof(uGUI_ResourceTracker))]
     public class uGUI_ResourceTrackerPatcher
     {
-        [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherAll))]
-        [HarmonyPrefix]
-        public static bool GatherAll_Prefix(uGUI_ResourceTracker __instance)
-        {
-            var camera = MainCamera.camera;
-            __instance.nodes.Clear();
-            __instance.techTypes.Clear();
-            ResourceTrackerDatabase.GetTechTypesInRange(camera.transform.position, Main.s_modConfig.MaxRange, (ICollection<TechType>) __instance.techTypes);
-            for (int index = 0; index < __instance.techTypes.Count; ++index)
+            [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherAll))]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> GatherAll_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
-                TechType techType = __instance.techTypes[index];
-                ResourceTrackerDatabase.GetNodes(camera.transform.position, Main.s_modConfig.MaxRange, techType, (ICollection<ResourceTrackerDatabase.ResourceInfo>) __instance.nodes);
+                var codes = new List<CodeInstruction>(instructions);
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Ldc_R4 && (float)codes[i].operand == 500)
+                    {
+                        codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(uGUI_ResourceTrackerPatcher), nameof(uGUI_ResourceTrackerPatcher.GetMaxRange))));
+                        i++;
+                    }
+                }
+
+                return codes.AsEnumerable();
             }
-
-            return false;
-        }
-
-        [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherScanned))]
-        [HarmonyPrefix]
-        public static bool GatherScanned_Prefix(uGUI_ResourceTracker __instance)
-        {
-            Camera camera = MainCamera.camera;
-            __instance.nodes.Clear();
-            __instance.mapRooms.Clear();
-            MapRoomScreen screen = uGUI_CameraDrone.main.GetScreen();
-            if ((UnityEngine.Object) screen != (UnityEngine.Object) null)
-                __instance.mapRooms.Add(screen.mapRoomFunctionality);
-            else
-                MapRoomFunctionality.GetMapRoomsInRange(camera.transform.position, Main.s_modConfig.MaxRange, (ICollection<MapRoomFunctionality>) __instance.mapRooms);
-            for (int index = 0; index < __instance.mapRooms.Count; ++index)
+            [HarmonyPatch(nameof(uGUI_ResourceTracker.GatherScanned))]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> GatherScanned_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
-                if (__instance.mapRooms[index].GetActiveTechType() != TechType.None)
-                    __instance.mapRooms[index].GetDiscoveredNodes((ICollection<ResourceTrackerDatabase.ResourceInfo>) __instance.nodes);
-            }
+                var codes = new List<CodeInstruction>(instructions);
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Ldc_R4 && (float)codes[i].operand == 500)
+                    {
+                        codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(uGUI_ResourceTrackerPatcher), nameof(uGUI_ResourceTrackerPatcher.GetMaxRange))));
+                        i++;
+                    }
+                }
 
-            return false;
-        }
+                return codes.AsEnumerable();
+            }
+            public static float GetMaxRange(float maxRange)
+            {
+                return Main.s_modConfig.MaxRange;
+            }
     }
 }
