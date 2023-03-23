@@ -10,6 +10,8 @@ namespace BetterScannerRoomUpgrades
 {
 
     [BepInPlugin(GUID, PluginName, VersionString)]
+    [BepInProcess("Subnautica.exe")]
+    [BepInDependency("com.ahk1221.smlhelper", BepInDependency.DependencyFlags.HardDependency)]
     public class Main : BaseUnityPlugin
     {
         private const string PluginName = "BetterScannerRoomUpgrades";

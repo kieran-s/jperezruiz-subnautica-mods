@@ -17,6 +17,7 @@ By default each power efficiency upgrade will reduce the power consumption by 20
 - [BepInEx](https://github.com/BepInEx/BepInEx) for making modding possible
 - [SML Helper](https://github.com/SubnauticaModding/SMLHelper) for making our life much easier to make subnautica mods
 - [Original BetterScannerRoom mod](https://github.com/Metious/BetterScannerRoom) for the inspiration
+- [aedenthorn](https://www.nexusmods.com/subnautica/users/18901754) for contributing and make it compatible with other mods
 
 ## Features
 
