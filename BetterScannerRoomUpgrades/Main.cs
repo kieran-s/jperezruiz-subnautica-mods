@@ -15,7 +15,7 @@ namespace BetterScannerRoomUpgrades
     public class Main : BaseUnityPlugin
     {
         private const string PluginName = "BetterScannerRoomUpgrades";
-        private const string VersionString = "1.2.0";
+        private const string VersionString = "1.3.0";
         private const string Author = "jperezruiz";
         private const string GUID = Author + "_" + PluginName;
         
