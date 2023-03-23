@@ -13,10 +13,11 @@ namespace CyclopsSpeedUpgrades.Patches
         [HarmonyPrefix]
         public static bool GetPowerConsumption_Prefix(CyclopsMotorMode __instance, ref float __result)
         {
-            var originalValue = __instance.motorModePowerConsumption[(int)__instance.cyclopsMotorMode];
-            var newValue = originalValue;
             var speedModuleInstalled = CyclopsSpeedModuleUtils.GetInstalled(__instance.subRoot.upgradeConsole);
-            newValue += newValue * speedModuleInstalled.PowerConsumptionMultiplier;
+            var originalValue = __instance.motorModePowerConsumption[(int)__instance.cyclopsMotorMode];
+            var newValue = speedModuleInstalled != null
+                ? originalValue + (originalValue * speedModuleInstalled.PowerConsumptionMultiplier)
+                : originalValue;
             __result = newValue;
             return false;
         }
