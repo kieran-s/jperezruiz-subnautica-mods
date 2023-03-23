@@ -1,8 +1,8 @@
-﻿# Subnautica SeaMoth Speed Upgrades (BepInEx)
+﻿# Subnautica Seamoth Speed Upgrades (BepInEx)
 
-Some insane speed upgrades for the SeaMoth.
+Some insane speed upgrades for the Seamoth.
 
-Four new modules to craft for the SeaMoth to increase the speed up to 500%.
+Four new modules to craft for the Seamoth to increase the speed up to 500%.
 
 ## Acknowledgements
 
@@ -12,14 +12,14 @@ Four new modules to craft for the SeaMoth to increase the speed up to 500%.
 
 ## Features
 
-The modules are unlocked along with the SeaMoth, can be fabricated in the [Moonpool Vehicle Upgrade Console](https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica))
+The modules are unlocked along with the Seamoth, can be fabricated in the [Moonpool Vehicle Upgrade Console](https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica))
 
 Although the most logical decision would be to fabricate all the modules in the vehicle console of the Moonpool,
 I have done it this way to have early access to the first speed increase :)
 
 Each module increases the speed and the power consumption.
 
-### SeaMothSpeedModuleMKI
+### SeamothSpeedModuleMKI
 
 Increases speed by 100% and the power consumption by 25%, you will go 2 times faster than vanilla.
 
@@ -30,37 +30,37 @@ Recipe:
 - 1 [Battery](https://subnautica.fandom.com/wiki/Battery_(Subnautica))
 - 1 [Lubricant](https://subnautica.fandom.com/wiki/Lubricant_(Subnautica))
 
-### SeaMothSpeedModuleMKII
+### SeamothSpeedModuleMKII
 
 Increases speed by 200% and the power consumption by 50%, you will go 3 times faster than vanilla.
 
 Recipe:
-- 1 SeaMothSpeedModuleMKI
+- 1 SeamothSpeedModuleMKI
 - 1 [Wiring kit](https://subnautica.fandom.com/wiki/Wiring_Kit_(Subnautica))
 - 1 [Power Cell](https://subnautica.fandom.com/wiki/Power_Cell_(Subnautica))
 - 1 [Magnetite](https://subnautica.fandom.com/wiki/Magnetite_(Subnautica))
 
-### SeaMothSpeedModuleMKIII
+### SeamothSpeedModuleMKIII
 
 Increases speed by 300% and the power consumption by 100%, you will go 4 times faster than the original at cost of twice the energy consumption.
 
 Recipe:
-- 1 SeaMothSpeedModuleMKII
+- 1 SeamothSpeedModuleMKII
 - 1 [Advanced Wiring kit](https://subnautica.fandom.com/wiki/Advanced_Wiring_Kit_(Subnautica))
 - 1 [Aerogel](https://subnautica.fandom.com/wiki/Aerogel_(Subnautica))
 - 1 [Ion Cube](https://subnautica.fandom.com/wiki/Ion_Cube_(Subnautica))
 
-### SeaMothSpeedModuleMKIIII
+### SeamothSpeedModuleMKIIII
 
 Increases speed by 400% and the power consumption by 200%, you will go 5 times faster than the original at cost of 3 times more energy consumption.
 
 Recipe:
-- 1 SeaMothSpeedModuleMKII
+- 1 SeamothSpeedModuleMKII
 - 1 [Advanced Wiring kit](https://subnautica.fandom.com/wiki/Advanced_Wiring_Kit_(Subnautica))
 - 1 [Ion Power Cell](https://subnautica.fandom.com/wiki/Ion_Power_Cell_(Subnautica))
 - 1 [Kyanite](https://subnautica.fandom.com/wiki/Kyanite_(Subnautica))
 
-![Crafting recipe for SeaMoth Speed Upgrades mod](./screenshots/craft.png)
+![Crafting recipe for Seamoth Speed Upgrades mod](./screenshots/craft.png)
 
 
 ## Installation
@@ -74,11 +74,11 @@ Just press the button :)
 
 ### Manual install
 - You must have [BepInEx Subnautica Pack](https://www.nexusmods.com/subnautica/mods/1108) and [SMLHelper (Modding Helper)](https://www.nexusmods.com/subnautica/mods/113) installed.
-- Extract the SeaMothSpeedUpgrades archive into your BepInEx\plugins\ folder.
+- Extract the SeamothSpeedUpgrades archive into your BepInEx\plugins\ folder.
 
 
 ## Recommended mods
-- [Slot Extender](https://www.nexusmods.com/subnautica/mods/142) allow to put more upgrades in the SeaMoth and the Seamoth
+- [Slot Extender](https://www.nexusmods.com/subnautica/mods/142) allow to put more upgrades in the Seamoth and the Seamoth
 - [Seamoth Sprint](https://www.nexusmods.com/subnautica/mods/1197) by RamuneNeptune
 - [More Seamoth Depth Modules](https://www.nexusmods.com/subnautica/mods/1135) by MrPurple6411
 - [Seamoth Thermal Reactor](https://www.nexusmods.com/subnautica/mods/1139) by MrPurple6411
