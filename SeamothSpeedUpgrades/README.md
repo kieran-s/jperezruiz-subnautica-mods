@@ -14,16 +14,11 @@ Four new modules to craft for the Seamoth to increase the speed up to 500%.
 
 The modules are unlocked along with the Seamoth, can be fabricated in the [Moonpool Vehicle Upgrade Console](https://subnautica.fandom.com/wiki/Vehicle_Upgrade_Console_(Subnautica))
 
-Although the most logical decision would be to fabricate all the modules in the vehicle console of the Moonpool,
-I have done it this way to have early access to the first speed increase :)
-
 Each module increases the speed and the power consumption.
 
 ### SeamothSpeedModuleMKI
 
 Increases speed by 100% and the power consumption by 25%, you will go 2 times faster than vanilla.
-
-Can be fabricated in the regular fabricator.
 
 Recipe:
 - 1 [Computer chip](https://subnautica.fandom.com/wiki/Computer_Chip_(Subnautica))
