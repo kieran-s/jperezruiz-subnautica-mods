@@ -1,6 +1,7 @@
 ﻿using CyclopsSolarCharger.Configuration;
 using HarmonyLib;
 using UnityEngine;
+
 namespace CyclopsSolarCharger.Patches
 {
     [HarmonyPatch(typeof(SubRoot), nameof(SubRoot.Update))]
@@ -20,14 +21,16 @@ namespace CyclopsSolarCharger.Patches
                 )
                 {
                     // get the num of CyclopsSolarCharger installed
-                    var numUpgrades = Mathf.Clamp(
+                    var numUpgrades = Mathf.Clamp
+                    (
                         __instance.upgradeConsole.modules.GetCount(Main.solarModule.TechType),
                         0,
                         SMLConfig.MaxStackMinValue
                     );
                     if (numUpgrades > 0)
                     {
-                        var maxDepth = Mathf.Clamp(
+                        var maxDepth = Mathf.Clamp
+                        (
                             Main.s_modConfig.MaxDepthOption,
                             SMLConfig.MaxDepthMinValue,
                             SMLConfig.MaxDepthMaxValue
@@ -40,6 +43,13 @@ namespace CyclopsSolarCharger.Patches
                         float energy = depth == 0 ? 0 : Mathf.Clamp(depth * 0.05f, 0.007f, 0.05f);
                         // stack up to 3 upgrades
                         float toCharge = energy * Mathf.Clamp(numUpgrades, 0, Main.s_modConfig.MaxStacksOption);
+                        float rechargeRate = Mathf.Clamp
+                        (
+                            Main.s_modConfig.RechargeRateMultiplier,
+                            SMLConfig.MinChargeMultiplier,
+                            SMLConfig.MaxChargeMultiplier
+                        );
+                        toCharge *= rechargeRate;
                         __instance.powerRelay.AddEnergy(toCharge, out float _);
                     }
                 }
