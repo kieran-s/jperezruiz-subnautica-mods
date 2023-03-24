@@ -47,8 +47,9 @@ You can craft the upgrade inside the Cyclops
 ### Configurable
 
 - The maximum number of modules to stack can be configured between 1 and 6.
-
 - The maximum operating depth can be set up to 800m.
+- The recharge speed multiplier allows decreasing or increase (from 0.5 to 4) the recharge speed. This parameter is applied as a multiplier, default 1 (default recharge speed), if set to 2, the recharge will be twice as fast.
+- 
 ## Installation
 
 ### Requirements
