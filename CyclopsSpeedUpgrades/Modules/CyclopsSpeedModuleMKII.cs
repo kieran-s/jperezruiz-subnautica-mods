@@ -5,8 +5,9 @@ namespace CyclopsSpeedUpgrades.Modules
 {
     public class CyclopsSpeedModuleMKII: BaseCyclopsSpeedModule
     {
-        public override float SpeedMultiplier => 3;
-
+        public override float ForwardSpeedMultiplier => 3f;
+        public override float VerticalSpeedMultiplier => 1.3f;
+        public override float TurningTroqueMultiplier => 1.2f;
         public override float PowerConsumptionMultiplier => 0.6f;
 
         public CyclopsSpeedModuleMKII() : base
