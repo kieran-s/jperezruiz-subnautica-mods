@@ -7,8 +7,8 @@ namespace CyclopsSpeedUpgrades.Modules
     public class CyclopsSpeedModuleMKI: BaseCyclopsSpeedModule
     {
         public override float ForwardSpeedMultiplier => 2f;
-        public override float VerticalSpeedMultiplier => 1.2f;
-        public override float TurningTroqueMultiplier => 1.1f;
+        public override float VerticalSpeedMultiplier => 1f;
+        public override float TurningTroqueMultiplier => 1f;
         public override float PowerConsumptionMultiplier => 0.3f;
 
         public CyclopsSpeedModuleMKI() : base
@@ -26,7 +26,7 @@ namespace CyclopsSpeedUpgrades.Modules
                 // same recipe has seamoth solar charge
                 Ingredients = new List<Ingredient>()
                 {
-                    new(TechType.WiringKit, 1),
+                    new(TechType.ComputerChip, 1),
                     new(TechType.Magnetite, 1),
                     new(TechType.Lubricant, 1)
                 }

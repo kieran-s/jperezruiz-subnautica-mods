@@ -80,6 +80,7 @@
         <Compile Include="Modules\CyclopsSpeedModuleMKI.cs" />
         <Compile Include="Modules\CyclopsSpeedModuleMKII.cs" />
         <Compile Include="Modules\CyclopsSpeedModuleMKIII.cs" />
+        <Compile Include="Modules\CyclopsSpeedModuleMKIIII.cs" />
         <Compile Include="Patches\CyclopsMotorModePatcher.cs" />
         <Compile Include="Patches\SubControlPatcher.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +90,7 @@
       <Content Include="Assets\mki.png" />
       <Content Include="Assets\mkii.png" />
       <Content Include="Assets\mkiii.png" />
+      <Content Include="Assets\mkiiii.png" />
       <Content Include="README.md" />
       <Content Include="screenshots\craft.png" />
     </ItemGroup>

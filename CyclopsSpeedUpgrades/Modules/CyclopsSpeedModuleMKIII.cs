@@ -6,8 +6,8 @@ namespace CyclopsSpeedUpgrades.Modules
     public class CyclopsSpeedModuleMKIII: BaseCyclopsSpeedModule
     {
         public override float ForwardSpeedMultiplier => 4;
-        public override float VerticalSpeedMultiplier => 1.4f;
-        public override float TurningTroqueMultiplier => 1.3f;
+        public override float VerticalSpeedMultiplier => 1.3f;
+        public override float TurningTroqueMultiplier => 1.2f;
 
         public override float PowerConsumptionMultiplier => 1f;
 
@@ -23,11 +23,10 @@ namespace CyclopsSpeedUpgrades.Modules
             return new TechData()
             {
                 craftAmount = 1,
-                // same recipe has seamoth solar charge
                 Ingredients = new List<Ingredient>()
                 {
                     new(Main.CyclopsSpeedModuleMKII.TechType, 1),
-                    new(TechType.Kyanite, 1),
+                    new(TechType.AdvancedWiringKit, 1),
                     new(TechType.PrecursorIonCrystal, 1)
                 }
             };

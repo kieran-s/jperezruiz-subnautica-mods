@@ -21,12 +21,14 @@ namespace CyclopsSpeedUpgrades
         internal static CyclopsSpeedModuleMKI CyclopsSpeedModuleMKI = new();
         internal static CyclopsSpeedModuleMKII CyclopsSpeedModuleMKII = new();
         internal static CyclopsSpeedModuleMKIII CyclopsSpeedModuleMKIII = new();
+        internal static CyclopsSpeedModuleMKIIII CyclopsSpeedModuleMKIIII = new();
 
         internal static List<BaseCyclopsSpeedModule> CyclopsSpeedModules = new()
         {
             CyclopsSpeedModuleMKI,
             CyclopsSpeedModuleMKII,
-            CyclopsSpeedModuleMKIII
+            CyclopsSpeedModuleMKIII,
+            CyclopsSpeedModuleMKIIII
         };
         /// <summary>
         /// Initialise the configuration settings and patch methods
