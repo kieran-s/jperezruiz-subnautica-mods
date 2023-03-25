@@ -13,7 +13,7 @@ namespace CyclopsSpeedUpgrades
     public class Main : BaseUnityPlugin
     {
         private const string PluginName = "CyclopsSpeedUpgradesBepinex";
-        private const string VersionString = "1.0.1";
+        private const string VersionString = "1.1.0";
         private const string Author = "jperezruiz";
         private const string GUID = "com.jperezruiz.cyclopsspeedupgrades";
 
