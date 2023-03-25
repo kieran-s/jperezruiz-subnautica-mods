@@ -1,5 +1,8 @@
-﻿using HarmonyLib;
+﻿using System.Linq;
+using HarmonyLib;
 using CyclopsSpeedUpgrades.Utils;
+using ModHelpers.Components;
+using ModHelpers.Modules;
 
 namespace CyclopsSpeedUpgrades.Patches
 {
@@ -9,6 +12,13 @@ namespace CyclopsSpeedUpgrades.Patches
     [HarmonyPatch(typeof(SubControl))]
     public class SubControlPatcher
     {
+        [HarmonyPatch(nameof(SubControl.Start))]
+        [HarmonyPostfix]
+        public static void Start_Postfix(SubControl __instance)
+        {
+            __instance.gameObject.EnsureComponent<CyclopsCustomUpgradeModules>();
+            __instance.GetComponent<CyclopsCustomUpgradeModules>().RegisterModules(Main.CyclopsSpeedModules.Cast<BaseCyclopsUpgradeModule>().ToList());
+        }
         [HarmonyPatch(nameof(SubControl.FixedUpdate))]
         [HarmonyPrefix]
         public static void FixedUpdate_Prefix(SubControl __instance, ref (float baseForwardAccel, float baseTurningTorque, float baseVerticalAccel) __state)

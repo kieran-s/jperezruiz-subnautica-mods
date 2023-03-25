@@ -31,9 +31,5 @@ namespace CyclopsSpeedUpgrades.Modules
                 }
             };
         }
-        protected override Sprite GetItemSprite()
-        {
-            return LoadSprite("mkiii.png");
-        }
     }
 }

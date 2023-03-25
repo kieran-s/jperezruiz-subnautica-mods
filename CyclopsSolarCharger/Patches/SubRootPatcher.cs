@@ -4,10 +4,12 @@ using UnityEngine;
 
 namespace CyclopsSolarCharger.Patches
 {
-    [HarmonyPatch(typeof(SubRoot), nameof(SubRoot.Update))]
-    public class SubRootUpdatePatcher
+    [HarmonyPatch(typeof(SubRoot))]
+    public class SubRootPatcher
     {
-        private static void Prefix(SubRoot __instance)
+        [HarmonyPatch(nameof(SubRoot.Update))]
+        [HarmonyPrefix]
+        private static void Update_Prefix(SubRoot __instance)
         {
             if (!__instance.LOD.IsMinimal())
             {
@@ -25,7 +27,7 @@ namespace CyclopsSolarCharger.Patches
                     (
                         __instance.upgradeConsole.modules.GetCount(Main.solarModule.TechType),
                         0,
-                        SMLConfig.MaxStackMinValue
+                        Main.s_modConfig.MaxStacksOption
                     );
                     if (numUpgrades > 0)
                     {
@@ -42,7 +44,7 @@ namespace CyclopsSolarCharger.Patches
                         // I have obtained these values by trial and error, but i think they are balanced
                         float energy = depth == 0 ? 0 : Mathf.Clamp(depth * 0.06f, 0.007f, 0.06f);
                         // stack up to 3 upgrades
-                        float toCharge = energy * Mathf.Clamp(numUpgrades, 0, Main.s_modConfig.MaxStacksOption);
+                        float toCharge = energy * numUpgrades;
                         float rechargeRate = Mathf.Clamp
                         (
                             Main.s_modConfig.RechargeRateMultiplier,

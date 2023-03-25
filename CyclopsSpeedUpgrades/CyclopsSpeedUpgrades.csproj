@@ -87,12 +87,18 @@
         <Compile Include="Utils\CyclopsSpeedModuleUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="Assets\mki.png" />
-      <Content Include="Assets\mkii.png" />
-      <Content Include="Assets\mkiii.png" />
-      <Content Include="Assets\mkiiii.png" />
+      <Content Include="Assets\CyclopsSpeedModuleMKI.png" />
+      <Content Include="Assets\CyclopsSpeedModuleMKII.png" />
+      <Content Include="Assets\CyclopsSpeedModuleMKIII.png" />
+      <Content Include="Assets\CyclopsSpeedModuleMKIIII.png" />
       <Content Include="README.md" />
       <Content Include="screenshots\craft.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ModHelpers\ModHelpers.csproj">
+        <Project>{296677ed-15a2-4db6-8c26-f39b4763d2de}</Project>
+        <Name>ModHelpers</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

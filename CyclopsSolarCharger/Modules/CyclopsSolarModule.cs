@@ -1,15 +1,16 @@
-﻿namespace CyclopsSolarCharger.Modules
+﻿using ModHelpers.Modules;
+using System.Collections.Generic;
+using UnityEngine;
+using SMLHelper.V2.Crafting;
+
+namespace CyclopsSolarCharger.Modules
 {
-    using System.Collections.Generic;
-    using UnityEngine;
-    using System.Collections;
-    using SMLHelper.V2.Assets;
-    using SMLHelper.V2.Crafting;
+    
     /**
      * Based on https://github.com/MrPurple6411/MrPurple6411-Subnautica-Mods/blob/main/SeamothThermal/Modules/SeamothThermalModule.cs
      * Thanks!
      */
-    public class CyclopsSolarModule: Equipable
+    public class CyclopsSolarModule: BaseCyclopsUpgradeModule
     {
         public CyclopsSolarModule() : base
         (
@@ -19,34 +20,7 @@
         )
         {
         }
-        public override EquipmentType EquipmentType => EquipmentType.CyclopsModule;
-
-        public override TechType RequiredForUnlock => TechType.Cyclops;
-
-        public override TechGroup GroupForPDA => TechGroup.VehicleUpgrades;
-
-        public override TechCategory CategoryForPDA => TechCategory.VehicleUpgrades;
-
-        public override CraftTree.Type FabricatorType => CraftTree.Type.CyclopsFabricator;
-
-        public override string[] StepsToFabricatorTab => new[] { "CyclopsModules" };
-
-        public override QuickSlotType QuickSlotType => QuickSlotType.Passive;
-        public override IEnumerator GetGameObjectAsync(IOut<GameObject> gameObject)
-        {
-            var taskResult = new TaskResult<GameObject>();
-            yield return CraftData.InstantiateFromPrefabAsync(TechType.SeamothSolarCharge, taskResult);
-            var obj = taskResult.Get();
-            
-            // Get the TechTags and PrefabIdentifiers
-            var techTag = obj.GetComponent<TechTag>();
-            var prefabIdentifier = obj.GetComponent<PrefabIdentifier>();
-
-            // Change them so they fit to our requirements.
-            techTag.type = TechType;
-            prefabIdentifier.ClassId = ClassID;
-            gameObject.Set(obj);
-        }
+       
         protected override TechData GetBlueprintRecipe()
         {
             return new TechData()
@@ -60,9 +34,15 @@
                 }
             };
         }
-        protected override Atlas.Sprite GetItemSprite()
+
+        public override TechType GetTechTypeToCopy()
         {
-            return SpriteManager.Get(TechType.SeamothSolarCharge);
+            return TechType.SeamothSolarCharge;
+        }
+
+        protected override Texture2D LoadUpgradeConsoleHUDSprite()
+        {
+            return GetItemSprite().texture;
         }
     }
 }
