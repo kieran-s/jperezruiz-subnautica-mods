@@ -13,7 +13,7 @@ namespace CyclopsSolarCharger
     public class Main : BaseUnityPlugin
     {
         private const string PluginName = "CyclopsSolarCharger";
-        private const string VersionString = "1.1.0";
+        private const string VersionString = "1.1.1";
         private const string Author = "jperezruiz";
         private const string GUID = Author + "_" + PluginName;
         
