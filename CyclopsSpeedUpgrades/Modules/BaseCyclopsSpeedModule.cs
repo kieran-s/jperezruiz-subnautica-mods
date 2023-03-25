@@ -17,7 +17,7 @@ namespace CyclopsSpeedUpgrades.Modules
     {
         public abstract float ForwardSpeedMultiplier { get; }
         public abstract float VerticalSpeedMultiplier { get; }
-        public abstract float TurningTroqueMultiplier { get; }
+        public abstract float TurningTorqueMultiplier { get; }
         public abstract float PowerConsumptionMultiplier { get; }
         public readonly int UpgradeLevel;
         public override string AssetsFolder => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");

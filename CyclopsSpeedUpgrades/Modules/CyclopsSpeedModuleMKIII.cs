@@ -7,7 +7,7 @@ namespace CyclopsSpeedUpgrades.Modules
     {
         public override float ForwardSpeedMultiplier => 4;
         public override float VerticalSpeedMultiplier => 1.3f;
-        public override float TurningTroqueMultiplier => 1.2f;
+        public override float TurningTorqueMultiplier => 1.2f;
 
         public override float PowerConsumptionMultiplier => 1f;
 
