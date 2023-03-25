@@ -2,9 +2,7 @@
 
 Go faster, much faster!
 
-Three new modules to craft for the Cyclops to increase the speed up to 400%.
-
-This is a completely re-work mod for Bepinex of the legacy mod [Cyclops Speed Upgrades from PrimeSonic](https://github.com/PrimeSonic/PrimeSonicSubnauticaMods/tree/master/CyclopsSpeedUpgrades)
+Four new modules to craft for the Cyclops to increase the speed up to 500% (6x times faster than vanilla).
 
 ## Acknowledgements
 
@@ -21,30 +19,53 @@ Each module increases the speed and the power consumption.
 
 ### CyclopsSpeedModuleMKI
 
-Increases speed by 100% and the power consumption by 30%, you will go 2 times faster than the original.
+Increases:
+- forward speed by 100%, you will go 2x times faster than vanilla
+- power consumption by 30%
 
 Recipe:
-- 1 [Wiring kit](https://subnautica.fandom.com/wiki/Wiring_Kit_(Subnautica))
+- 1 [Computer chip](https://subnautica.fandom.com/wiki/Computer_Chip_(Subnautica))
 - 1 [Magnetite](https://subnautica.fandom.com/wiki/Magnetite_(Subnautica))
 - 1 [Lubricant](https://subnautica.fandom.com/wiki/Lubricant_(Subnautica))
 
 ### CyclopsSpeedModuleMKII
 
-Increases speed by 200% and the power consumption by 60%, you will go 3 times faster than the original.
+Increases:
+- speed by 200%, you will go 3x times faster than the vanilla
+- vertical speed by 20%
+- rotation speed (torque) by 10%
+- power consumption by 60%
 
 Recipe:
 - 1 CyclopsSpeedModuleMKI
-- 1 [Advanced Wiring kit](https://subnautica.fandom.com/wiki/Advanced_Wiring_Kit_(Subnautica))
-- 1 [Aerogel](https://subnautica.fandom.com/wiki/Aerogel_(Subnautica))
+- 1 [Wiring kit](https://subnautica.fandom.com/wiki/Wiring_Kit_(Subnautica))
+- 1 [Lithium](https://subnautica.fandom.com/wiki/Lithium_(Subnautica))
 
 ### CyclopsSpeedModuleMKIII
 
-Increases speed by 300% and the power consumption by 100%, you will go 4 times faster than the original at cost of twice the energy consumption.
+Increases:
+- speed by 300%, you will go 4x times faster than vanilla
+- vertical speed by 30%
+- rotation speed (torque) by 20%
+- power consumption by 100%, twice the energy consumption.
 
 Recipe:
 - 1 CyclopsSpeedModuleMKII
-- 1 [Kyanite](https://subnautica.fandom.com/wiki/Kyanite_(Subnautica))
+- 1 [Advanced Wiring Kit](https://subnautica.fandom.com/wiki/Advanced_Wiring_Kit_(Subnautica))
 - 1 [Ion Cube](https://subnautica.fandom.com/wiki/Ion_Cube_(Subnautica))
+
+### CyclopsSpeedModuleMKIIII
+
+Increases:
+- speed by 500%, you will go 6x times faster than vanilla O.O
+- vertical speed by 50%
+- rotation speed (torque) by 40%
+- power consumption by 200%, 3x more energy consumption.
+
+Recipe:
+- 1 CyclopsSpeedModuleMKII
+- 1 [Ion Power Cell](https://subnautica.fandom.com/wiki/Ion_Power_Cell_(Subnautica))
+- 1 [Kyanite](https://subnautica.fandom.com/wiki/Kyanite_(Subnautica))
 
 ![Crafting recipe for Cyclops Speed Upgrades mod](./screenshots/craft.png)
 
@@ -64,7 +85,8 @@ Just press the button :)
 
 
 ## Recommended mods
-- [Slot Extender](https://www.nexusmods.com/subnautica/mods/142) allow to put more upgrades in the Cyclops and the Sheamoth
+- [Slot Extender](https://www.nexusmods.com/subnautica/mods/142) increases the number of installable upgrades in the Cyclops and the Sheamoth
+- [Cyclops Solar Charger](https://www.nexusmods.com/subnautica/mods/1209) allows recharging the cyclops with the sun
 
 ## License
 
