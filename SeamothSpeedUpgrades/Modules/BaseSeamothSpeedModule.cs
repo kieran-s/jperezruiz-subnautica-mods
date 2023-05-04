@@ -38,9 +38,9 @@ namespace SeamothSpeedUpgrades.Modules
 
         public override TechCategory CategoryForPDA => TechCategory.VehicleUpgrades;
 
-        public override CraftTree.Type FabricatorType => CraftTree.Type.SeamothUpgrades;
+        public override CraftTree.Type FabricatorType => CraftTree.Type.Workbench;
 
-        public override string[] StepsToFabricatorTab => new[] { "SeamothModules" };
+        public override string[] StepsToFabricatorTab => new[] { "Modules" };
 
         public override QuickSlotType QuickSlotType => QuickSlotType.Passive;
         public override IEnumerator GetGameObjectAsync(IOut<GameObject> gameObject)
