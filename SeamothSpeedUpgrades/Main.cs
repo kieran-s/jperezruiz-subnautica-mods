@@ -3,7 +3,9 @@ using HarmonyLib;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
+using SeamothSpeedUpgrades.Configuration;
 using SeamothSpeedUpgrades.Modules;
+using SMLHelper.V2.Handlers;
 
 namespace SeamothSpeedUpgrades
 {
@@ -18,6 +20,7 @@ namespace SeamothSpeedUpgrades
         private const string GUID = "com.jperezruiz.SeamothSpeedUpgrades";
 
         public static ManualLogSource Log = new ManualLogSource(PluginName);
+        internal static SMLConfig s_modConfig { get; } = OptionsPanelHandler.RegisterModOptions<SMLConfig>();
         internal static SeamothSpeedModuleMK1 SeamothSpeedModuleMk1 = new();
         internal static SeamothSpeedModuleMK2 SeamothSpeedModuleMk2 = new();
         internal static SeamothSpeedModuleMK3 SeamothSpeedModuleMk3 = new();

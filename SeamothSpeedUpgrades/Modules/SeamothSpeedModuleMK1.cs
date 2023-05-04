@@ -6,8 +6,6 @@ namespace SeamothSpeedUpgrades.Modules
 
     public class SeamothSpeedModuleMK1: BaseSeamothSpeedModule
     {
-        public override float SpeedMultiplier => 2f;
-        public override float PowerConsumptionMultiplier => 0.25f;
         public override CraftTree.Type FabricatorType => CraftTree.Type.SeamothUpgrades;
 
         public override string[] StepsToFabricatorTab => new[] { "SeamothModules" };

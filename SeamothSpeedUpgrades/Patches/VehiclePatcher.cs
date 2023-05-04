@@ -1,4 +1,6 @@
-﻿using HarmonyLib;
+﻿using System;
+using HarmonyLib;
+using SeamothSpeedUpgrades.Configuration;
 using SeamothSpeedUpgrades.Utils;
 using UnityEngine;
 
@@ -27,10 +29,15 @@ namespace SeamothSpeedUpgrades.Patches
             __state.forwardForce = __instance.forwardForce;
             __state.sidewardForce = __instance.sidewardForce;
             var speedModuleInstalled = SeamothSpeedModuleUtils.GetInstalled(__instance.modules);
-            float speedMultiplier = speedModuleInstalled != null ? speedModuleInstalled.SpeedMultiplier : 1f;
-            __instance.backwardForce *= speedMultiplier;
-            __instance.forwardForce *= speedMultiplier;
-            __instance.sidewardForce *= speedMultiplier;
+            if (speedModuleInstalled != null)
+            {
+                var speedIncrement = Main.s_modConfig.GetSpeedForLevel(speedModuleInstalled.UpgradeLevel);
+                
+                speedIncrement = Mathf.Clamp(speedIncrement, 0f, SMLConfig.MaxIncrease);
+                __instance.backwardForce += (__instance.backwardForce * speedIncrement) / 100;
+                __instance.forwardForce += (__instance.forwardForce * speedIncrement) / 100;
+                __instance.sidewardForce += (__instance.sidewardForce * speedIncrement) / 100;
+            }
         }
         [HarmonyPatch(nameof(Vehicle.ApplyPhysicsMove))]
         [HarmonyPostfix]
@@ -49,8 +56,12 @@ namespace SeamothSpeedUpgrades.Patches
             if (speedModuleInstalled != null)
             {
                 float originalEnergyCost = energyCost * 1f;
-                float newEnergyCost = originalEnergyCost + (originalEnergyCost*speedModuleInstalled.PowerConsumptionMultiplier);
-                energyCost = newEnergyCost;
+                var energyCostIncrement = Main.s_modConfig.GetPowerConsumptionForLevel
+                    (speedModuleInstalled.UpgradeLevel);
+            
+                energyCostIncrement = Mathf.Clamp(energyCostIncrement, 0f, SMLConfig.MaxIncrease);
+                energyCost += (originalEnergyCost * energyCostIncrement) / 100;
+                Main.Log.LogInfo($"Original ${originalEnergyCost}, new ${energyCost}");
             }
         }
     }

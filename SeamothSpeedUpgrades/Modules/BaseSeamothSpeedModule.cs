@@ -7,27 +7,71 @@ using UnityEngine;
 using Sprite = Atlas.Sprite;
 using System.Collections;
 using SMLHelper.V2.Assets;
+using SMLHelper.V2.Json;
+
 namespace SeamothSpeedUpgrades.Modules
 {
-
     /**
      * Base for the SeamothSpeedModules
      */
-    public abstract class BaseSeamothSpeedModule: Equipable
+    public abstract class BaseSeamothSpeedModule : Equipable
     {
-        public abstract float SpeedMultiplier { get; }
-        public abstract float PowerConsumptionMultiplier { get; }
         public readonly int UpgradeLevel;
-        
-        public override string AssetsFolder => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");
+
+        private const string DescriptionTemplate =
+            "Increases the speed by a {speed}% and the power constumption by {power}%";
+
+        public override string AssetsFolder => Path.Combine
+        (
+            Path.GetDirectoryName
+            (
+                Assembly.GetExecutingAssembly()
+                        .Location
+            ),
+            "Assets"
+        );
+
         public BaseSeamothSpeedModule(int upgradeLevel, string description) : base
         (
-            "SeamothSpeedModuleMK"+String.Concat(Enumerable.Repeat("I", upgradeLevel)),
+            "SeamothSpeedModuleMK" + String.Concat(Enumerable.Repeat("I", upgradeLevel)),
             "Seamoth Speed Module MK" + upgradeLevel.ToString(),
             description
         )
         {
-            this.UpgradeLevel = upgradeLevel;
+            UpgradeLevel = upgradeLevel;
+            Main.s_modConfig.OnFinishedLoading += OnConfigChange;
+            Description =
+                DescriptionTemplate
+                    .Replace
+                    (
+                        "{speed}",
+                        Main.s_modConfig.GetSpeedForLevel(upgradeLevel)
+                            .ToString()
+                    )
+                    .Replace
+                    (
+                        "{power}",
+                        Main.s_modConfig.GetPowerConsumptionForLevel(upgradeLevel)
+                            .ToString()
+                    );
+        }
+
+        private void OnConfigChange(object sender, ConfigFileEventArgs eventData)
+        {
+            Description =
+                DescriptionTemplate
+                    .Replace
+                    (
+                        "{speed}",
+                        Main.s_modConfig.GetSpeedForLevel(UpgradeLevel)
+                            .ToString()
+                    )
+                    .Replace
+                    (
+                        "{power}",
+                        Main.s_modConfig.GetPowerConsumptionForLevel(UpgradeLevel)
+                            .ToString()
+                    );
         }
 
         public override EquipmentType EquipmentType => EquipmentType.SeamothModule;
@@ -43,12 +87,13 @@ namespace SeamothSpeedUpgrades.Modules
         public override string[] StepsToFabricatorTab => new[] { "Modules" };
 
         public override QuickSlotType QuickSlotType => QuickSlotType.Passive;
+
         public override IEnumerator GetGameObjectAsync(IOut<GameObject> gameObject)
         {
             var taskResult = new TaskResult<GameObject>();
             yield return CraftData.InstantiateFromPrefabAsync(TechType.SeamothElectricalDefense, taskResult);
             var obj = taskResult.Get();
-            
+
             // Get the TechTags and PrefabIdentifiers
             var techTag = obj.GetComponent<TechTag>();
             var prefabIdentifier = obj.GetComponent<PrefabIdentifier>();
@@ -68,7 +113,8 @@ namespace SeamothSpeedUpgrades.Modules
                 Texture2D texture = ImageUtils.LoadTextureFromFile(iconPath);
                 icon = ImageUtils.LoadSpriteFromTexture(texture);
             }
+
             return icon;
-        } 
+        }
     }
 }

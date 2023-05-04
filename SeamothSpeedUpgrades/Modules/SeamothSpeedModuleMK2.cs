@@ -5,9 +5,6 @@ namespace SeamothSpeedUpgrades.Modules
 {
     public class SeamothSpeedModuleMK2: BaseSeamothSpeedModule
     {
-        public override float SpeedMultiplier => 3f;
-
-        public override float PowerConsumptionMultiplier => 0.5f;
 
         public SeamothSpeedModuleMK2() : base
         (
