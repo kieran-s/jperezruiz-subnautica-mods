@@ -18,17 +18,17 @@ namespace SeamothSpeedUpgrades
         private const string GUID = "com.jperezruiz.SeamothSpeedUpgrades";
 
         public static ManualLogSource Log = new ManualLogSource(PluginName);
-        internal static SeamothSpeedModuleMKI SeamothSpeedModuleMKI = new();
-        internal static SeamothSpeedModuleMKII SeamothSpeedModuleMKII = new();
-        internal static SeamothSpeedModuleMKIII SeamothSpeedModuleMKIII = new();
-        internal static SeamothSpeedModuleMKIIII SeamothSpeedModuleMKIIII = new();
+        internal static SeamothSpeedModuleMK1 SeamothSpeedModuleMk1 = new();
+        internal static SeamothSpeedModuleMK2 SeamothSpeedModuleMk2 = new();
+        internal static SeamothSpeedModuleMK3 SeamothSpeedModuleMk3 = new();
+        internal static SeamothSpeedModuleMK4 SeamothSpeedModuleMk4 = new();
 
         internal static List<BaseSeamothSpeedModule> SeamothSpeedModules = new()
         {
-            SeamothSpeedModuleMKI,
-            SeamothSpeedModuleMKII,
-            SeamothSpeedModuleMKIII,
-            SeamothSpeedModuleMKIIII
+            SeamothSpeedModuleMk1,
+            SeamothSpeedModuleMk2,
+            SeamothSpeedModuleMk3,
+            SeamothSpeedModuleMk4
         };
         /// <summary>
         /// Initialise the configuration settings and patch methods

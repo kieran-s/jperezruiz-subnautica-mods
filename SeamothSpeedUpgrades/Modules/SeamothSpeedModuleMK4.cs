@@ -3,16 +3,16 @@ using SMLHelper.V2.Crafting;
 using Sprite = Atlas.Sprite;
 namespace SeamothSpeedUpgrades.Modules
 {
-    public class SeamothSpeedModuleMKIII: BaseSeamothSpeedModule
+    public class SeamothSpeedModuleMK4: BaseSeamothSpeedModule
     {
-        public override float SpeedMultiplier => 4;
+        public override float SpeedMultiplier => 5;
 
-        public override float PowerConsumptionMultiplier => 1f;
+        public override float PowerConsumptionMultiplier => 3f;
 
-        public SeamothSpeedModuleMKIII() : base
+        public SeamothSpeedModuleMK4() : base
         (
-            3,
-            "Crazily increase the speed of the SeaMoth at the cost of a much higher power consumption. Not stackable"
+            4,
+            "Maybe too much speed increase for the SeaMoth and a serious power consumption. Not stackable"
         )
         {
         }
@@ -24,16 +24,16 @@ namespace SeamothSpeedUpgrades.Modules
                 // same recipe has seamoth solar charge
                 Ingredients = new List<Ingredient>()
                 {
-                    new(Main.SeamothSpeedModuleMKII.TechType, 1),
+                    new(Main.SeamothSpeedModuleMk3.TechType, 1),
                     new(TechType.AdvancedWiringKit, 1),
-                    new(TechType.Aerogel, 1),
-                    new(TechType.PrecursorIonCrystal, 1)
+                    new(TechType.PrecursorIonPowerCell, 1),
+                    new(TechType.Kyanite, 1),
                 }
             };
         }
         protected override Sprite GetItemSprite()
         {
-            return LoadSprite("mkiii.png");
+            return LoadSprite("mk4.png");
         }
     }
 }

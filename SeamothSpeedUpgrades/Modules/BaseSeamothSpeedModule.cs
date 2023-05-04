@@ -18,11 +18,12 @@ namespace SeamothSpeedUpgrades.Modules
         public abstract float SpeedMultiplier { get; }
         public abstract float PowerConsumptionMultiplier { get; }
         public readonly int UpgradeLevel;
+        
         public override string AssetsFolder => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets");
         public BaseSeamothSpeedModule(int upgradeLevel, string description) : base
         (
             "SeamothSpeedModuleMK"+String.Concat(Enumerable.Repeat("I", upgradeLevel)),
-            "Seamoth Speed Module MK" + String.Concat(Enumerable.Repeat("I", upgradeLevel)),
+            "Seamoth Speed Module MK" + upgradeLevel.ToString(),
             description
         )
         {

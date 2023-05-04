@@ -4,12 +4,13 @@ using Sprite = Atlas.Sprite;
 namespace SeamothSpeedUpgrades.Modules
 {
 
-    public class SeamothSpeedModuleMKI: BaseSeamothSpeedModule
+    public class SeamothSpeedModuleMK1: BaseSeamothSpeedModule
     {
         public override float SpeedMultiplier => 2f;
         public override float PowerConsumptionMultiplier => 0.25f;
+        
 
-        public SeamothSpeedModuleMKI() : base
+        public SeamothSpeedModuleMK1() : base
         (
             1,
             "Increase the speed of the SeaMoth at the cost of power consumption. Not stackable"
@@ -32,7 +33,7 @@ namespace SeamothSpeedUpgrades.Modules
         }
         protected override Sprite GetItemSprite()
         {
-            return LoadSprite("mki.png");
+            return LoadSprite("mk1.png");
         }
     }
 }
