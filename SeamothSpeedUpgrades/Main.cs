@@ -15,7 +15,7 @@ namespace SeamothSpeedUpgrades
     public class Main : BaseUnityPlugin
     {
         private const string PluginName = "SeamothSpeedUpgradesBepinex";
-        private const string VersionString = "1.0.0";
+        private const string VersionString = "2.0.0";
         private const string Author = "jperezruiz";
         private const string GUID = "com.jperezruiz.SeamothSpeedUpgrades";
 
