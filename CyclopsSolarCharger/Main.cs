@@ -19,7 +19,7 @@ namespace CyclopsSolarCharger
         
         public static ManualLogSource Log = new ManualLogSource(PluginName);
         internal static Modules.CyclopsSolarModule solarModule = new();
-        internal static SMLConfig s_modConfig { get; } = OptionsPanelHandler.RegisterModOptions<SMLConfig>();
+        internal static NautilusConfig s_modConfig { get; } = OptionsPanelHandler.RegisterModOptions<NautilusConfig>();
         /// <summary>
         /// Initialise the configuration settings and patch methods
         /// </summary>

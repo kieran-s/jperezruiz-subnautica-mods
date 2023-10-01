@@ -34,8 +34,8 @@ namespace CyclopsSolarCharger.Patches
                         var maxDepth = Mathf.Clamp
                         (
                             Main.s_modConfig.MaxDepthOption,
-                            SMLConfig.MaxDepthMinValue,
-                            SMLConfig.MaxDepthMaxValue
+                            NautilusConfig.MaxDepthMinValue,
+                            NautilusConfig.MaxDepthMaxValue
                         );
                         // get a value between 0 and 1 depending on the depth
                         var depth = Mathf.Clamp01((maxDepth + __instance.transform.position.y) / maxDepth);
@@ -48,8 +48,8 @@ namespace CyclopsSolarCharger.Patches
                         float rechargeRate = Mathf.Clamp
                         (
                             Main.s_modConfig.RechargeRateMultiplier,
-                            SMLConfig.MinChargeMultiplier,
-                            SMLConfig.MaxChargeMultiplier
+                            NautilusConfig.MinChargeMultiplier,
+                            NautilusConfig.MaxChargeMultiplier
                         );
                         toCharge *= rechargeRate;
                         __instance.powerRelay.AddEnergy(toCharge, out float _);
